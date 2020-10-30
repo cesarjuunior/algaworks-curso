@@ -24,5 +24,3 @@ VALUES ('Café', '2017-06-10', '2017-06-10', 8.30, 'Outros', 'RECEITA', 2,2);
 INSERT INTO LANCAMENTO (descricao, data_vencimento, data_pagamento, valor, observacao, tipo, codigo_categoria, codigo_pessoa)
 VALUES ('Pneus', '2017-06-10', null, 3000.00, 'Pirelli', 'RECEITA', 3,3);
 
-INSERT INTO LANCAMENTO (descricao, data_vencimento, data_pagamento, valor, observacao, tipo, codigo_categoria, codigo_pessoa)
-VALUES ('Lanche', '2017-06-10', '2017-06-10', 10.00, 'dia a dia', 'RECEITA', 4,4);
