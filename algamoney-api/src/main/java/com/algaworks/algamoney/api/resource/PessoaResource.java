@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import javax.ws.rs.PathParam;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,6 +58,12 @@ public class PessoaResource {
     @PreAuthorize("hasAuthority('ROLE_PESQUISAR_PESSOA') and #oauth2.hasScope('read')")
     public Optional<Pessoa> buscarPessoaPeloCodigo(@PathVariable Long codigo){
         return pessoaRepository.findById(codigo);
+    }
+
+    @GetMapping("/buscar")
+    @PreAuthorize("hasAuthority('ROLE_PESQUISAR_PESSOA') and #oauth2.hasScope('read')")
+    public Pessoa buscarPessoa(@PathParam("nome") String nome){
+        return pessoaService.buscarPessoa(nome);
     }
 
     @DeleteMapping("/{codigo}")
