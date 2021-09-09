@@ -1,4 +1,4 @@
 # algaworks-curso
-Curso de Spring e Angular da AlgaWorks
+Curso de Spring e Angular da AlgaWorks.
 Bando de Dados Prostgresql
 
