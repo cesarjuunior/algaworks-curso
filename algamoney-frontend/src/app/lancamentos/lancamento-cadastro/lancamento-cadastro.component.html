@@ -1,0 +1,54 @@
+<div class="container">
+  <form>
+    <div class="ui-g-12">
+      <h1>Novo Lançamento</h1>
+    </div>
+    <div class="p-col-12" style="padding-left: 0">
+      <p-selectButton [options]="tipos" #tipo></p-selectButton>
+    </div>
+
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-6 p-md-3">
+        <label>Vencimento</label>
+        <p-calendar dateFormat="dd/mm/yy" showIcon="true" name="dataVencimento" ngModel #dataVencimento="ngModel" required></p-calendar>
+        <app-message [control]="dataVencimento" error="required" text="Informe uma Data de Vencimento"></app-message>
+      </div>
+      <div class="p-field p-col-6 p-md-3">
+        <label>{{tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento'}}</label>
+        <p-calendar dateFormat="dd/mm/yy" showIcon="true" name="dataPagReceb" ngModel #dataPagReceb="ngModel" required></p-calendar>
+        <app-message [control]="dataPagReceb" error="required" text="Informe uma Data de {{tipo.value === 'RECEITA' ? 'Recebimento' : 'Pagamento'}}"></app-message>
+
+      </div>
+      <div class="p-field p-col-12 p-md-9">
+        <label>Descrição</label>
+        <input pInputText type="text" name="descricao" ngModel #descricao="ngModel" required minlength="5">
+        <app-message [control]="descricao" error="required" text="Informe uma descrição"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-3">
+        <label>Valor</label>
+        <p-inputNumber inputId="currency-br" mode="currency" currency="BRL" name="valor" ngModel #valor="ngModel" required></p-inputNumber>
+        <app-message [control]="valor" error="required" text="Informe um valor"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label>Categoria</label>
+        <p-dropdown [options]="categorias" placeholder="Selecione" name="categoria" ngModel #categoria="ngModel" required></p-dropdown>
+        <app-message [control]="categoria" error="required" text="Selecione uma categoria"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label>Pessoa</label>
+        <p-dropdown [options]="pessoas" [filter]="true" placeholder="Selecione" name="pessoa" ngModel #pessoa="ngModel" required></p-dropdown>
+        <app-message [control]="pessoa" error="required" text="Selecione uma pessoa"></app-message>
+      </div>
+      <div class="p-field p-col-12">
+        <label>Observação</label>
+        <textarea pInputTextarea rows="3" name="observacao" ngModel #observacao="ngModel" required></textarea>
+        <app-message [control]="observacao" error="required" text="Informe uma observação"></app-message>
+      </div>
+    </div>
+    <div class="p-formgroup-inline">
+      <button pButton type="submit" label="Salvar" style="margin-right: 5px"></button>
+      <button pButton type="submit" label="Novo" class="p-button-info"></button>
+      <button pButton label="Voltar para a pesquisa" class="p-button-link"></button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,53 @@
+<div class="container">
+  <form>
+    <div class="ui-g-12">
+      <h1>Nova Pessoa</h1>
+    </div>
+    <div class="p-fluid p-formgrid p-grid">
+      <div class="p-field p-col-12 p-md-12">
+        <label>Nome</label>
+        <input pInputText type="text" name="nome" ngModel #nome="ngModel" required>
+        <app-message [control]="nome" error="required" text="Informe um Nome"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-9">
+        <label>Logradouro</label>
+        <input pInputText type="text"  name="logradouro" ngModel #logradouro="ngModel" required="">
+        <app-message [control]="logradouro" error="required" text="Informe um Logradouro"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-3">
+        <label>Número</label>
+        <p-inputMask mask="(99) 99999-9999" name="numero" ngModel #numero="ngModel" required></p-inputMask>
+        <app-message [control]="numero" error="required" text="Informe um Número"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <label>Complemento</label>
+        <input pInputText type="text" #complemento>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <label>Bairro</label>
+        <input pInputText type="text" name="bairro" ngModel #bairro="ngModel" required>
+        <app-message [control]="bairro" error="required" text="Informe um Bairro"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+        <label>Cep</label>
+        <p-inputMask mask="99.999-999" name="cep" ngModel #cep="ngModel" required></p-inputMask>
+        <app-message [control]="cep" error="required" text="Informe um Cep"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label>Cidade</label>
+        <input pInputText type="text" name="cidade" ngModel #cidade="ngModel" required>
+        <app-message [control]="cidade" error="required" text="Informe uma Cidade"></app-message>
+      </div>
+      <div class="p-field p-col-12 p-md-6">
+        <label>Estado</label>
+        <input pInputText type="text" name="estado" ngModel #estado="ngModel" required>
+        <app-message [control]="estado" error="required" text="Informe um Estado"></app-message>
+      </div>
+    </div>
+    <div class="p-formgroup-inline">
+      <button pButton type="submit" label="Salvar" style="margin-right: 5px"></button>
+      <button pButton type="submit" label="Novo" class="p-button-info"></button>
+      <button pButton label="Voltar para a pesquisa" class="p-button-link"></button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,24 @@
+<p-table [value]="lancamentos" [paginator]="true" [rows]="5" [responsive]="true">
+  <ng-template pTemplate="header" >
+    <tr>
+      <th style="width: 250px">Pessoa</th>
+      <th>Descrição</th>
+      <th class="col-data">Vencimento</th>
+      <th class="col-data">Pagamento</th>
+      <th class="col-valor" style="text-align: center;">Valor</th>
+      <th class="col-acoes" style="text-align: center;">Ações</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-lancamento>
+    <tr>
+      <td>{{lancamento.pessoa}}</td>
+      <td>{{lancamento.descricao}}</td>
+      <td>{{lancamento.dataVencimento | date: 'dd/MM/yyyy'}}</td>
+      <td>{{lancamento.dataPagamento | date: 'dd/MM/yyyy'}}</td>
+      <td style="text-align: right;" [style.color]="lancamento.tipo == 'Despesa' ? 'red' : 'blue'">{{lancamento.valor | currency: 'BRL':true}}</td>
+      <td>
+        <p-button class="button" icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="bottom"></p-button>
+        <p-button class="button" icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="bottom"></p-button>
+      </td>
+  </ng-template>
+</p-table>

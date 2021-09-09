@@ -1,0 +1,15 @@
+<nav class="navbar" xmlns="http://www.w3.org/1999/html">
+  <div class="container">
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <a href="#" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu"><i class="pi pi-bars"></i></a>
+      </div>
+    </div>
+  </div>
+  <ul class="navbar-menu" [hidden]="!exibindoMenu">
+    <li class="navbar-usuario">César Augusto</li>
+    <li class="navbar-menuitem"><a href="#">Lançamento</a></li>
+    <li class="navbar-menuitem"><a href="#">Pessoas</a></li>
+    <li class="navbar-menuitem"><a href="#">Logout</a></li>
+  </ul>
+</nav>
